@@ -194,4 +194,8 @@ public class JUnitReportingRunner extends BlockJUnit4ClassRunner {
 				name));
 		numberOfTestCases++;
 	}
+
+    protected Embedder getConfiguredEmbedder() {
+        return configuredEmbedder;
+    }
 }
