@@ -32,6 +32,7 @@ public class JUnitReportingRunner extends BlockJUnit4ClassRunner {
 	private int numberOfTestCases;
 	private Description rootDescription;
 	private ConfigurableEmbedder configurableEmbedder;
+	public String unusedVariable;
 
 	public JUnitReportingRunner(Class<? extends ConfigurableEmbedder> testClass)
 			throws InitializationError, ReflectiveOperationException {
@@ -39,6 +40,9 @@ public class JUnitReportingRunner extends BlockJUnit4ClassRunner {
 		configurableEmbedder = testClass.newInstance();
 		configuredEmbedder = configurableEmbedder.configuredEmbedder();
 		configuration = configuredEmbedder.configuration();
+
+		String various = "Various";
+
 
 		List<String> storyPaths = getStoryPaths(testClass);
 
